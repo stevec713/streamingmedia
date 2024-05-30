@@ -61,26 +61,83 @@ table {
     --white: white;
     --background-blue: #020659;
 
-    --font:Verdana, Geneva, Tahoma, sans-serif;
+    --font: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* -------------- BODY STYLES -------------- */
+/* -------------- ALL STYLES -------------- */
+*{
+    box-sizing: border-box;
+}
+
+/* -------------- GENERAL STYLES -------------- */
 body {
     background-color: var(--background-blue);
+    font-family: var(--font);
+    font-size: 1em;
+    line-height: 1.2;
+    color: var(--white);
 }
 
-/* -------------- SECTION STYLES -------------- */
+h2, h3, p, dl, dd {
+    font-size: 1em;
+}
+
+footer p {
+    font-size: .75em;
+}
+
+/* -------------- CONTAINER STYLES -------------- */
 header, main, footer {
     background-color: var(--white);
     width: 90%;
     margin: 0 auto;
 }
 
-
-
 header{
-    background-color: var(--blue-purple);
+    background: linear-gradient(90deg, var(--dk-blue), black);
+    margin-top: 58px;
 }
+
+main, footer{
+    color: var(--magenta);
+}
+
+/* -------------- HEADER STYLES -------------- */
+header div{
+    margin: 0;
+    top: 0;
+    position: fixed;
+    width: 90%;
+    background-color: var(--blue-purple);
+    z-index: 3;
+}
+
+header label{
+    position: absolute;
+}
+
+h1{
+    font-size: 1.25em;
+    font-family: var(--font);
+    font-weight: bold;
+    padding:17px;
+    text-align: center;
+}
+
+header h2 {
+    padding: 10px;
+}
+header p {
+    padding: 0 10px 10px 10px;
+}
+
+/* -------------- MAIN STYLES -------------- */
+h3 {
+    font-weight: bold;
+    padding: 15px;
+}
+
+
 
 
 
