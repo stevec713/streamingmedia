@@ -134,8 +134,99 @@ header p {
 /* -------------- MAIN STYLES -------------- */
 h3 {
     font-weight: bold;
-    padding: 15px;
+    padding: 20px 0px 10px 20px;
 }
+#trending div{
+    display: flex;
+    overflow-x: scroll;
+    gap:15px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+#trending article {
+    display: flex;
+    flex-direction: column;
+    position:relative;
+}
+#trending h4{
+    order: 2;
+    font-weight: bold;
+    padding: 5px;
+    background-color: lightgray;
+    position: absolute;
+    bottom:29px;
+    z-index: 1;
+    width: 100%;
+    opacity: 80%;
+}
+#trending p{
+    order: 3;
+    background-color: lightgray;
+    padding: 5px;
+    position: absolute;
+    bottom:0;
+    z-index: 1;
+    width: 100%;
+    opacity: 80%;
+}
+#trending img{
+    position: relative;
+}
+#trending audio{
+    position: absolute;
+    opacity: 70%;
+    top: 35%;
+}
+
+#trending a {
+    padding: 10px 25px;
+    margin: 30px;
+    background-color: var(--magenta);
+    border-radius: 5px;
+    color: var(--white);
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#trending ::-webkit-scrollbar {
+
+}
+#trending ::-webkit-scrollbar-track {
+
+}
+#trending ::-webkit-scrollbar-thumb {
+
+}
+#trending ::-webkit-scrollbar-thumb:hover {
+
+}
+#playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
+
+}
+#playlists ::-webkit-scrollbar-track, #curated ::-webkit-scrollbar-track  {
+
+}
+#playlists ::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb {
+
+}
+#playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
+
+}
+
+
+
 
 
 
