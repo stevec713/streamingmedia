@@ -127,15 +127,17 @@ h1{
 header h2 {
     padding: 10px;
 }
+
 header p {
     padding: 0 10px 10px 10px;
 }
 
-/* -------------- MAIN STYLES -------------- */
+/* -------------- TRENDING STYLES -------------- */
 h3 {
     font-weight: bold;
     padding: 20px 0px 10px 20px;
 }
+
 #trending div{
     display: flex;
     overflow-x: scroll;
@@ -149,6 +151,7 @@ h3 {
     flex-direction: column;
     position:relative;
 }
+
 #trending h4{
     order: 2;
     font-weight: bold;
@@ -160,6 +163,7 @@ h3 {
     width: 100%;
     opacity: 80%;
 }
+
 #trending p{
     order: 3;
     background-color: lightgray;
@@ -170,9 +174,11 @@ h3 {
     width: 100%;
     opacity: 80%;
 }
+
 #trending img{
     position: relative;
 }
+
 #trending audio{
     position: absolute;
     opacity: 70%;
@@ -188,42 +194,46 @@ h3 {
     text-decoration: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-#trending ::-webkit-scrollbar {
-
+/* -------------- SCROLLBAR STYLES -------------- */
+#trending div::-webkit-scrollbar {
+    width: 15px;
 }
-#trending ::-webkit-scrollbar-track {
 
+#trending div::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 15px var(--magenta);
 }
-#trending ::-webkit-scrollbar-thumb {
 
+#trending div::-webkit-scrollbar-thumb {
+    background: var(--magenta);
+    border-radius: 5px;
 }
-#trending ::-webkit-scrollbar-thumb:hover {
 
+#trending div::-webkit-scrollbar-thumb:hover {
+    background: var(--background-blue);
 }
-#playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
 
+#playlists div::-webkit-scrollbar, #curated ::-webkit-scrollbar {
+    width: 15px;
 }
-#playlists ::-webkit-scrollbar-track, #curated ::-webkit-scrollbar-track  {
 
+#playlists div::-webkit-scrollbar-track, #curated ::-webkit-scrollbar-track  {
+    box-shadow: inset 0 0 15px var(--background-blue);
 }
-#playlists ::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb {
 
+#playlists div::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb {
+    background: var(--background-blue);
+    border-radius: 5px;
 }
-#playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
 
+#playlists div::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
+    background: var(--white);
 }
+
+/* -------------- PLAYLISTS STYLES -------------- */
+
+
+
+
 
 
 
@@ -243,6 +253,7 @@ ul {
     max-height: 0;
     transition: max-height .2s ease-out;
 }
+
 label {
     cursor: pointer;
     display: inline-block;
@@ -250,6 +261,7 @@ label {
     position: relative;
     user-select: none;
 }
+
 label span {
     background-color: #ffffff;
     display: block;
@@ -258,6 +270,7 @@ label span {
     transition: background-color .2s ease-out;
     width: 18px;
 }
+
 label span:before, label span:after {
     background: #ffffff;
     content: '';
@@ -267,27 +280,35 @@ label span:before, label span:after {
     transition: all .2s ease-out;
     width: 100%;
 }
+
 label span:before {
     top: 5px;
 }
+
 label span:after {
     top: -5px;
 }
+
 input {
     display: none;
 }
+
 input:checked ~ ul {
     max-height: 500px;
 }
+
 input:checked ~ label span {
     background: transparent;
 }
+
 input:checked ~ label span:before {
     transform: rotate(-45deg);
 }
+
 input:checked ~ label span:after {
     transform: rotate(45deg);
 }
+
 input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
     top: 0;
 }
@@ -301,6 +322,7 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
+
     label span, input {
         display: none;
     }
