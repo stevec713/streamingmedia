@@ -91,6 +91,7 @@ header, main, footer {
     background-color: var(--white);
     width: 90%;
     margin: 0 auto;
+    max-width: 1200px;
 }
 
 header{
@@ -110,6 +111,8 @@ header div{
     width: 90%;
     background-color: var(--blue-purple);
     z-index: 3;
+    max-width: 1200px;
+
 }
 
 header label{
@@ -158,7 +161,7 @@ h3 {
     padding: 5px;
     background-color: lightgray;
     position: absolute;
-    bottom:29px;
+    bottom: 29px;
     z-index: 1;
     width: 100%;
     opacity: 80%;
@@ -169,7 +172,7 @@ h3 {
     background-color: lightgray;
     padding: 5px;
     position: absolute;
-    bottom:0;
+    bottom: 0;
     z-index: 1;
     width: 100%;
     opacity: 80%;
@@ -183,15 +186,17 @@ h3 {
     position: absolute;
     opacity: 70%;
     top: 35%;
+    width: 100%;
 }
 
-#trending a {
+#trending a, #playlists a, #curated a {
     padding: 10px 25px;
     margin: 30px;
     background-color: var(--magenta);
     border-radius: 5px;
     color: var(--white);
     text-decoration: none;
+    width: 200px;
 }
 
 /* -------------- SCROLLBAR STYLES -------------- */
@@ -229,16 +234,55 @@ h3 {
     background: var(--white);
 }
 
-/* -------------- PLAYLISTS STYLES -------------- */
+/* -------------- PLAYLISTS AND CURATED STYLES -------------- */
+#playlists h3, #curated h3 {
+    margin: 30px 0 5px 0;
+}
 
+#playlists div {
+    display: flex;
+    overflow-x: scroll;
+    padding: 10px;
+    gap: 15px;
+    background-color: var(--alt-lt-blue);
+    margin-bottom: 20px;
+}
 
+#playlists article {
+    background-color: var(--lt-blue);
+    padding: 10px;
+}
 
+#playlists h4, #curated h4 {
+    color: var(--white);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
 
+#playlists p, #curated p {
+    color: var(--white);
+    text-align: center;
+}
 
+#curated div {
+    display: flex;
+    overflow-x: scroll;
+    padding: 10px;
+    gap: 15px;
+    background-color: var(--dk-blue);
+    margin-bottom: 20px;
+}
 
+#curated article {
+    background-color: var(--blue-purple);
+    padding: 10px;
+}
 
-
-
+/* -------------- FOOTER STYLES -------------- */
+footer{
+    
+}
 
 
 
