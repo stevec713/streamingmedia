@@ -60,12 +60,13 @@ table {
     --magenta:#590242;
     --white: white;
     --background-blue: #020659;
+    --lt-gray: lightgray;
 
     --font: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* -------------- ALL STYLES -------------- */
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -77,6 +78,9 @@ body {
     line-height: 1.2;
     color: var(--white);
 }
+h1, h2, h3 {
+    text-transform: uppercase;
+}
 
 h2, h3, p, dl, dd {
     font-size: 1em;
@@ -87,79 +91,92 @@ footer p {
 }
 
 /* -------------- CONTAINER STYLES -------------- */
-header, main, footer {
+header, main, nav, footer {
     background-color: var(--white);
     width: 90%;
     margin: 0 auto;
     max-width: 1200px;
 }
 
-header{
+header {
     background: linear-gradient(90deg, var(--dk-blue), black);
-    margin-top: 58px;
+    margin-top: 60px;
+    padding: 5px 20px;
 }
 
-main, footer{
+main, footer {
     color: var(--magenta);
 }
 
 /* -------------- HEADER STYLES -------------- */
-header div{
-    margin: 0;
-    top: 0;
+nav {
     position: fixed;
-    width: 90%;
+    top: 0;
     background-color: var(--blue-purple);
     z-index: 3;
-    max-width: 1200px;
-
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60px;
 }
 
-header label{
+label {
+    z-index: 3;
+}
+
+.name {
+    display: inline-block;
     position: absolute;
-}
-
-h1{
-    font-size: 1.25em;
-    font-family: var(--font);
+    top: 15px;
+    text-decoration: none;
+    font-size: 1.7em;
     font-weight: bold;
-    padding:17px;
+    color: var(--white);
+    width: 100%;
     text-align: center;
+    font-variant: small-caps;
 }
 
-header h2 {
+h1 {
+    font-size: 1.25em;
+    font-weight: bold;
     padding: 10px;
+    max-width: 750px;
+    margin: 0 auto;
+    text-transform: uppercase;
 }
 
 header p {
-    padding: 0 10px 10px 10px;
+    display: block;
+    max-width: 750px;
+    padding: 0 10px 15px 10px;
+    margin: 0 auto;
 }
 
 /* -------------- TRENDING STYLES -------------- */
-h3 {
+h2 {
     font-weight: bold;
-    padding: 20px 0px 10px 20px;
+    padding: 30px 0px 10px 20px;
 }
 
-#trending div{
+#trending div {
     display: flex;
     overflow-x: scroll;
-    gap:15px;
-    padding: 5px;
+    gap: 15px;
+    padding: 10px;
     margin-bottom: 20px;
 }
 
 #trending article {
     display: flex;
     flex-direction: column;
-    position:relative;
+    position: relative;
 }
 
-#trending h4{
+#trending h3 {
     order: 2;
     font-weight: bold;
     padding: 5px;
-    background-color: lightgray;
+    background-color: var(--lt-gray);
     position: absolute;
     bottom: 29px;
     z-index: 1;
@@ -167,9 +184,9 @@ h3 {
     opacity: 80%;
 }
 
-#trending p{
+#trending p {
     order: 3;
-    background-color: lightgray;
+    background-color: var(--lt-gray);
     padding: 5px;
     position: absolute;
     bottom: 0;
@@ -178,15 +195,16 @@ h3 {
     opacity: 80%;
 }
 
-#trending img{
+#trending img {
     position: relative;
 }
 
-#trending audio{
+#trending audio {
     position: absolute;
     opacity: 70%;
     top: 35%;
-    width: 100%;
+    width: 95%;
+    align-self: center;
 }
 
 #trending a, #playlists a, #curated a {
@@ -196,7 +214,6 @@ h3 {
     border-radius: 5px;
     color: var(--white);
     text-decoration: none;
-    width: 200px;
 }
 
 /* -------------- SCROLLBAR STYLES -------------- */
@@ -235,15 +252,15 @@ h3 {
 }
 
 /* -------------- PLAYLISTS AND CURATED STYLES -------------- */
-#playlists h3, #curated h3 {
-    margin: 30px 0 5px 0;
+#playlists h2, #curated h2 {
+    margin: 20px 0 0 10px;
 }
 
 #playlists div {
     display: flex;
     overflow-x: scroll;
     padding: 10px;
-    gap: 15px;
+    gap: 20px;
     background-color: var(--alt-lt-blue);
     margin-bottom: 20px;
 }
@@ -253,7 +270,7 @@ h3 {
     padding: 10px;
 }
 
-#playlists h4, #curated h4 {
+#playlists h3, #curated h3 {
     color: var(--white);
     font-weight: bold;
     text-align: center;
@@ -269,7 +286,7 @@ h3 {
     display: flex;
     overflow-x: scroll;
     padding: 10px;
-    gap: 15px;
+    gap: 20px;
     background-color: var(--dk-blue);
     margin-bottom: 20px;
 }
@@ -280,18 +297,16 @@ h3 {
 }
 
 /* -------------- FOOTER STYLES -------------- */
-footer{
-    
+footer {
+    padding: 60px 0 20px 0;
 }
 
+small {
+    display: block;
+    text-align: center;
+}
 
-
-
-
-
-
-
-/* -------------- PROVIDED STYLES -------------- */
+/* -------------- MENU STYLES -------------- */
 ul {
     overflow: hidden;
     max-height: 0;
@@ -357,17 +372,45 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     top: 0;
 }
 
-/* --------------  MEDIA QUERIES -------------- */
+/* -------------- MEDIA QUERIES -------------- */
 @media screen and (min-width:834px) {
+    li a {
+        font-size: .9em;
+        text-transform: uppercase;
+        color: var(--white);
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .name {
+        display: inline;
+        position: static;
+        top: 0;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: var(--white);
+        text-transform: none;
+        font-variant: small-caps;
+    }
+
     ul {
         overflow: visible;
         position: absolute;
-        top: 0;
+        width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        align-content: center;
+        align-items: center;
+        justify-items: center;
+        top: 50%;
+        padding: 0 10px;
     }
 
     label span, input {
         display: none;
+    }
+
+    #trending h3{
+        bottom: 30px;
     }
 }
