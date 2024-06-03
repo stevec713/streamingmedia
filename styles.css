@@ -307,10 +307,24 @@ small {
 }
 
 /* -------------- MENU STYLES -------------- */
+li a:not(.name) {
+    display: block;
+    color: var(--white);
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    background-color: var(--blue-purple);
+    width: 90%;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
 ul {
     overflow: hidden;
     max-height: 0;
     transition: max-height .2s ease-out;
+    background-color:var(--dk-blue);
+    width: 40%;
 }
 
 label {
