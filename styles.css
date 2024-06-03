@@ -90,6 +90,11 @@ footer p {
     font-size: .75em;
 }
 
+a:focus {
+    outline: 2px solid var(--lt-blue);
+    border-radius: 5px;
+}
+
 /* -------------- CONTAINER STYLES -------------- */
 header, main, nav, footer {
     background-color: var(--white);
@@ -201,7 +206,6 @@ h2 {
 
 #trending audio {
     position: absolute;
-    opacity: 70%;
     top: 35%;
     width: 95%;
     align-self: center;
@@ -386,6 +390,40 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     top: 0;
 }
 
+/* -------------- AUDIO STYLES -------------- */
+audio::-webkit-media-controls-mute-button {
+    background-color: var(--white);
+    border-radius: 50%;
+}
+audio::-webkit-media-controls-play-button {
+    background-color: var(--white);
+    border-radius: 50%;
+}
+audio::-webkit-media-controls-enclosure {
+    background-color: rgba(200,200,200, .7);
+}
+
+/* -------------- HOVER STYLES -------------- */
+li a:hover:not(.name) {
+    color: var(--dk-purple);
+    background-color: var(--alt-lt-blue);
+    box-shadow:  0px 0px 5px 0px #222;
+}
+
+.name:hover {
+    color: var(--lt-blue);
+}
+
+#trending a:hover, #playlists a:hover, #curated a:hover {
+    background-color: var(--background-blue);
+    color: var(--lt-blue);
+    box-shadow:  0px 0px 5px 0px #222;
+}
+
+audio::-webkit-media-controls-play-button:hover, audio::-webkit-media-controls-mute-button:hover {
+    background-color: gray;
+}
+
 /* -------------- MEDIA QUERIES -------------- */
 @media screen and (min-width:834px) {
     li a {
@@ -394,6 +432,13 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
         color: var(--white);
         text-decoration: none;
         text-align: center;
+        color: var(--white);
+    }
+
+    li a:hover:not(.name) {
+        color:var(--lt-blue);
+        background-color: var(--magenta);
+        box-shadow: none;
     }
 
     .name {
@@ -415,7 +460,6 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         align-content: center;
         align-items: center;
-        justify-items: center;
         top: 50%;
         padding: 0 10px;
     }
@@ -427,4 +471,35 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     #trending h3{
         bottom: 30px;
     }
+
+    main > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 600px;
+    }
+
+    #playlists div, #curated div {
+        flex-direction: column;
+        height: 500px;
+        overflow-y: scroll;
+        overflow-x: auto;
+    }
+
+    #playlists img, #curated img {
+        float: left;
+        clear: left;
+        margin-right: 10px;
+    }
+
+    #trending a {
+        position: relative;
+        left: 73%;
+    }
+
+    #playlists a, #curated a {
+        position: relative;
+        left: 50%;
+        margin: 0;
+    }
+
 }
